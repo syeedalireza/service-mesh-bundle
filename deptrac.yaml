@@ -1,0 +1,22 @@
+deptrac:
+  paths:
+    - ./src
+  layers:
+    - name: Discovery
+      collectors:
+        - type: directory
+          value: src/Discovery/.*
+    - name: Resilience
+      collectors:
+        - type: directory
+          value: src/Resilience/.*
+    - name: LoadBalancer
+      collectors:
+        - type: directory
+          value: src/LoadBalancer/.*
+  ruleset:
+    Discovery: ~
+    Resilience:
+      - Discovery
+    LoadBalancer:
+      - Discovery
