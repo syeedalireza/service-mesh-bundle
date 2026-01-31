@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  consul:
+    image: consul:latest
+    ports:
+      - "127.0.0.1:8500:8500"
+    networks:
+      - mesh-network
+
+networks:
+  mesh-network:
+    driver: bridge
